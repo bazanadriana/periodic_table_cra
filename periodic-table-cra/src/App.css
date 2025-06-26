@@ -1,0 +1,107 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #000;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  padding: 1rem;
+  background-color: #000;
+  color: white;
+}
+
+.periodic-grid {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 6px;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.element-box {
+  background-color: #ff5f5f;
+  border-radius: 6px;
+  padding: 0.5rem;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.75rem;
+  min-height: 60px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.element-box:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 0 10px #222;
+}
+
+.nav-home {
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.9rem;
+}
+
+/* Highlighted single element display */
+.highlighted-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-box {
+  background-color: #000;
+  padding: 2rem;
+  border-radius: 10px;
+  color: white;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  z-index: 11;
+  transition: all 0.2s ease;
+}
+
+.modal-button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
