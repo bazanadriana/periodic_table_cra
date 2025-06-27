@@ -171,7 +171,7 @@ const elements: Element[] = [
     { symbol: 'Og', name: 'Oganesson',     atomicNumber: 118, gridColumn: 18, gridRow: 7, category: 'noble gas', description: 'Synthetic.' },
   ];
 
-function App() {
+const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selected, setSelected] = useState<Element | null>(null);
 
@@ -183,8 +183,11 @@ function App() {
 
   return (
     <div className="App">
+      {/* Navbar */}
       <div className="navbar">
-        <div className="nav-home" onClick={() => setSearchTerm('')}>SEARCH</div>
+        <div className="nav-home" onClick={() => setSearchTerm('')}>
+          SEARCH
+        </div>
         <input
           type="text"
           className="search-input"
@@ -194,11 +197,15 @@ function App() {
         />
       </div>
 
-      <h1 style={{ color: 'white', textAlign: 'center', marginBottom: '1rem' }}>
-        Periodic Table of Elements
-      </h1>
+      {/* Title */}
+      <div>
+        <h1 style={{ color: 'white', textAlign: 'center', marginBottom: '1rem' }}>
+          Periodic Table of Elements
+        </h1>
+      </div>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem' }}>
+      {/* Legend */}
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem', marginTop: '1rem' }}>
         {Object.entries(neonColors).map(([cat, col]) => (
           <div key={cat} style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
             <div
@@ -216,6 +223,7 @@ function App() {
         ))}
       </div>
 
+      {/* Highlighted element if search match */}
       {searchResult ? (
         <div className="highlighted-element">
           <div
@@ -256,6 +264,7 @@ function App() {
         </div>
       )}
 
+      {/* Modal */}
       {selected && (
         <div className="modal-overlay" onClick={() => setSelected(null)}>
           <div
@@ -283,6 +292,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;
